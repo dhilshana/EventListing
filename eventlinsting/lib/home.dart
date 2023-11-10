@@ -16,7 +16,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   var _controller = TextEditingController();
-  int items = 100;
+  int items = 6;
   List<CategoryItem> categoryItems = [
     CategoryItem(
         category: 'Tech',
@@ -32,7 +32,20 @@ class _HomePageState extends State<HomePage> {
     // Add more items as needed
   ];
   List<String> searchTerms = [
-    "Tech","NSS","Sports",
+    "Tech",
+    "NSS",
+    "Sports",
+  ];
+  List<String> location = [
+    "AVT",
+    "Seminar Hall",
+    "Open Auditorium",
+    "Russo",
+    "Mini Auditorium",
+    "Mahagony",
+    "Ground",
+    "B voc Hall",
+    "IEDC Room"
   ];
   @override
   Widget build(BuildContext context) {
@@ -48,7 +61,6 @@ class _HomePageState extends State<HomePage> {
                   filled: true,
                   fillColor: Color.fromARGB(255, 240, 237, 237),
                   hintText: 'Search...',
-                  
                   prefixIcon: IconButton(
                     icon: Icon(
                       Icons.search,
@@ -160,7 +172,9 @@ class _HomePageState extends State<HomePage> {
                                               78,
                                             ),
                                           ),
-                                          Text("  Bezier Stadium"),
+                                          Text(
+                                            location[index],
+                                          ),
                                         ],
                                       ),
                                     ),
@@ -265,4 +279,3 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
-
